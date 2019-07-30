@@ -16,4 +16,5 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
     ])
-   .purgeCss();
+   .purgeCss()
+   .browserSync('https://laralifts.test');
