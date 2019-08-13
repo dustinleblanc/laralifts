@@ -174,7 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        TomJamon\TailwindLaravel\TailwindLaravelServiceProvider::class,
     ],
 
     /*
@@ -225,6 +225,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Form' => TomJamon\TailwindLaravel\FormFacade::class,
+        'Html' => TomJamon\TailwindLaravel\HtmlFacade::class,
 
     ],
 

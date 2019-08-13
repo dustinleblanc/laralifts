@@ -20,8 +20,8 @@
 </head>
 <body class="bg-gray-100 font-normal text-gray-600">
     <div id="app">
-        @include('partials.navbar')
-        <main class="py-4">
+        @include('partials.navigation.navbar')
+        <main class="flex h-screen">
             @yield('content')
         </main>
     </div>

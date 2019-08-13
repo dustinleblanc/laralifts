@@ -1,21 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mx-auto px-4 clearfix">
-        <div class="shadow-lg bg-white border border-gray-300 rounded px-12 py-8 w-1/2 mx-auto">
-            <div class="font-hairline text-3xl leading-loose mb-8">{{ __('Register') }}</div>
-            <form method="POST" action="{{ route('register') }}">
-                @csrf
-                @include('partials.forms.input', ['id' => 'name', 'label' => 'Name', 'type' => 'text', 'required' => true])
-                @include('partials.forms.input', ['id' => 'email', 'label' => 'E-Mail Address', 'type' => 'email', 'required' => true])
-                @include('partials.forms.input', ['id' => 'password', 'label' => 'Password', 'type' => 'password', 'required' => true])
-                @include('partials.forms.input', ['id' => 'password-confirm', 'label' => 'Confirm Password', 'type' => 'password', 'name' => 'password_confirmation', 'autocomplete' => 'new-password', 'required' => true])
-                <div class="py-4">
-                    <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2 rounded-full">
-                        {{ __('Register') }}
-                    </button>
-                </div>
-            </form>
+    <div class="container mx-auto px-4 md:px-8 flex h-screen content-center items-center justify-center">
+        <div class="shadow-2xl bg-white border border-gray-300 rounded px-12 py-8">
+            <div class="font-hairline text-3xl leading-loose">{{ __('Register') }}</div>
+            {!! Form::open(['route' => 'register']) !!}
+            {!! Form::control('text', 'name', $errors, [
+                'label' => 'Name',
+                'placeholder' => 'Tyler Otwell',
+            ]) !!}
+            {!! Form::control('email', 'email', $errors, [
+                'label' => 'E-Mail Address',
+                'placeholder' => 'tyler@thereallaravel.com',
+            ]) !!}
+            {!! Form::control('password', 'password', $errors, [
+                'label' => 'Password',
+            ]) !!}
+            {!! Form::control('password', 'password_confirmation', $errors, [
+                'label' => 'Confirm Password',
+                'name' => 'password-confirm',
+            ]) !!}
+            {!! Form::submit('Register') !!}
+            {!! Form::close() !!}
         </div>
     </div>
 @endsection
